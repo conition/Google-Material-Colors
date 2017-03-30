@@ -1,23 +1,28 @@
 var currentState = "none";
 var textOpen = "";
 
-var ch = $('.container').height();
-$('.container').css({'width' :ch+'px'});
+$('.button-collapse').sideNav();
+
+var ch = $('.c-container').height();
+$('.c-container').css({'width' :ch+'px'});
 var cw = $('.color-group').width();
 $('.cw').css({'height' :cw+'px'});
 
+$('.close').css( 'left', (($(window).width() - ch) / 2) );
 $('.close').hide();
 
 jQuery.fn.originalColors = function(color) {
   // TODO change to forloop over an array (.each() [50, 100, 200, etc.])
   currentState = "none";
   $( '.close' ).hide( "fast" );
+  $( '.color-group').css('color', 'transparent')
   $( '.1' ).toggleClass('red-500 ' + color + '-50');
   $( '.2' ).toggleClass('pink-500 ' + color + '-100');
   $( '.3' ).toggleClass('purple-500 ' + color + '-200');
   $( '.4' ).toggleClass('deep-purple-500 ' + color + '-300');
   $( '.5' ).toggleClass('indigo-500 ' + color + '-400');
   $( '.6' ).toggleClass('blue-500 ' + color + '-500');
+  $( '.6' ).removeClass('bordered');
   $( '.7' ).toggleClass('light-blue-500 ' + color + '-600');
   $( '.8' ).toggleClass('cyan-500 ' + color + '-700');
   $( '.9' ).toggleClass('teal-500 ' + color + '-800');
@@ -42,6 +47,7 @@ jQuery.fn.changeColor = function(color) {
     $( '.4' ).toggleClass('deep-purple-500 ' + color + '-300');
     $( '.5' ).toggleClass('indigo-500 ' + color + '-400');
     $( '.6' ).toggleClass('blue-500 ' + color + '-500');
+    $( '.6' ).addClass('bordered')
     $( '.7' ).toggleClass('light-blue-500 ' + color + '-600');
     $( '.8' ).toggleClass('cyan-500 ' + color + '-700');
     $( '.9' ).toggleClass('teal-500 ' + color + '-800');
@@ -54,6 +60,8 @@ jQuery.fn.changeColor = function(color) {
     $( '.14' ).toggleClass('amber-500 ' + color + '-a-200');
     $( '.15' ).toggleClass('orange-500 ' + color + '-a-400');
     $( '.16' ).toggleClass('deep-orange-500 ' + color + '-a-700');
+
+    $( '.color-group').css('color', '#fff');
   }
 };
 
@@ -69,18 +77,33 @@ jQuery.fn.rgb2hex = function(orig){
 $(".color-group").click(function() {
   new Clipboard(".color-group");
   if (currentState != "none") {
+    var tinycolorcolor = tinycolor($(this).css("background-color"));
     // Find copied color and convert it to hex
-    var copiedColor = $.fn.rgb2hex($(this).css("background-color"));
+    if ($('#hex').is(':checked')) {
+      var copiedColor = tinycolorcolor.toString("hex6");
+    }
+    else if ($('#rgb').is(':checked')) {
+      var copiedColor = tinycolorcolor.toString("rgb");
+    }
+    else if ($('#hsl').is(':checked')) {
+      var copiedColor = tinycolorcolor.toString("hsl");
+    }
+    else if ($('#hsv').is(':checked')) {
+      var copiedColor = tinycolorcolor.toString("hsv");
+    }
+    else {
+
+    }
+
     // Copy it to clipboard
     $(this).attr("data-clipboard-text", copiedColor);
+
     // Log to console and show toast
     var message = "Copied " + copiedColor + " to clipboard";
     console.log(message);
-    Materialize.toast(message, 1000);
-    $('.toast').css( 'background-color', copiedColor );
-
+    Materialize.toast(message, 3000);
+    $('.toast').css( 'background-color', tinycolorcolor.toString("hex") );
     // Change color of text if background is too bright
-    var tinycolorcolor = tinycolor(copiedColor);
     if (tinycolorcolor.getBrightness() > 150) {
       $('.toast').css( 'color', '#000');
     }
