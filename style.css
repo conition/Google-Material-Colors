@@ -4,6 +4,63 @@
 }
 
 body {
+  background-color: #fefefe;
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+
+  /* Support for all WebKit browsers. */
+  -webkit-font-smoothing: antialiased;
+  /* Support for Safari and Chrome. */
+  text-rendering: optimizeLegibility;
+
+  /* Support for Firefox. */
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Support for IE. */
+  font-feature-settings: 'liga';
+}
+
+.side-bar {
+  float: right;
+  position: absolute;
+  padding: 1em;
+}
+
+.container {
+  height: 90vh;
+  padding-top: 5vh;
+}
+
+.tabs .tab a{
+  color: #888;
+}
+
+.tabs .tab a:hover, .tabs .tab a.active {
+    background-color: transparent;
+    color: #2979ff;
+}
+
+.tabs .indicator {
+  background-color: #2979ff;
+}
+
+p a {
+  color: #2979ff;
+}
+
+.x-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,24 +68,50 @@ body {
   width: 100%;
 }
 
-.container {
+.c-container {
   margin-right: auto;
   margin-left: auto;
   height: 90vh;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  box-shadow: 0 0 -2em rgba(0,0,0,0.5);
+}
+
+.card {
+  padding: 1em;
 }
 
 .color-group {
   width: 25%;
   background-color: #fff;
+  border: 0 solid white;
+  color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+
+  font-size: 1.3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  text-indent: 1rem;
+}
+
+.bordered {
+  transition: border 200ms ease-in-out 140ms;
+  box-sizing: border-box;
+  box-shadow: 0 0 0.7em rgba(0,0,0,0.5);
+  z-index: 1;
 }
 
 .color-group:hover {
+  transition: border 200ms ease-in-out 140ms;
   box-shadow: 0 0 1em rgba(0,0,0,0.5);
-  z-index: 1;
+  z-index: 2;
 }
 
 .info {
@@ -50,42 +133,37 @@ body {
 .close {
   position: absolute;
   top: 1vh;
-  left: 30%;
   z-index: 3;
-}
-
-.toast {
-  background-color: #00ced1;
 }
 
 i {
   color: #777;
 }
 
-#c1{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out;}
+#c1{transition: all 200ms ease-in-out, background-color 200ms ease-in-out;}
 
-#c1{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 100ms;}
+#c1{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 100ms;}
 
-#c2{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 120ms;}
-#c5{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 120ms;}
+#c2{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 120ms;}
+#c5{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 120ms;}
 
-#c3{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
-#c6{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
-#c9{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
+#c3{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
+#c6{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
+#c9{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
 
-#c4{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
-#c7{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
-#c10{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
-#c13{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
+#c4{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
+#c7{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
+#c10{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
+#c13{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
 
-#c8{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
-#c11{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
-#c14{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
+#c8{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
+#c11{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
+#c14{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
 
-#c12{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 200ms;}
-#c15{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 200ms;}
+#c12{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 200ms;}
+#c15{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 200ms;}
 
-#c16{transition: box-shadow 200ms ease-in-out, background-color 200ms ease-in-out 220ms;}
+#c16{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 220ms;}
 
 /* --- COLORS -- */
 /* Red */
