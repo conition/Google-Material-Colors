@@ -30,7 +30,8 @@
   -moz-osx-font-smoothing: grayscale;
 
   /* Support for IE. */
-  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+          font-feature-settings: 'liga';
 }
 
 /* Sidenav */
@@ -69,9 +70,16 @@ i {
 /* Main color boxes */
 
 .x-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   height: 100vh;
   width: 100%;
 }
@@ -80,9 +88,15 @@ i {
   margin-right: auto;
   margin-left: auto;
   height: 90vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 .color-box {
@@ -91,16 +105,22 @@ i {
   color: transparent;
   -webkit-touch-callout: none;
   -webkit-user-select: none;
-  -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
 
   font-size: 1.3em;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   text-indent: 1rem;
 }
 
@@ -110,10 +130,12 @@ i {
 }
 
 .bordered:hover {
-  animation: none;
+  -webkit-animation: none;
+          animation: none;
 }
 
 .color-box:hover {
+  -webkit-transition: border 200ms ease-in-out 140ms;
   transition: border 200ms ease-in-out 140ms;
   box-shadow: 0 0 1em rgba(0,0,0,0.5);
   z-index: 2;
@@ -149,23 +171,23 @@ p a {
   color: #2979ff;
 }
 
-#c1{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out      ;}
-#c1{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 100ms;}
-#c2{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 120ms;}
-#c5{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 120ms;}
-#c3{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
-#c6{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
-#c9{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
-#c4{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
-#c7{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
-#c10{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
-#c13{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
-#c8{transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
-#c11{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
-#c14{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
-#c12{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 200ms;}
-#c15{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 200ms;}
-#c16{transition: all 200ms ease-in-out, background-color 200ms ease-in-out 220ms;}
+#c1{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out      ;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out      ;}
+#c1{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 100ms;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 100ms;}
+#c2{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 120ms;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 120ms;}
+#c5{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 120ms;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 120ms;}
+#c3{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
+#c6{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
+#c9{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 140ms;}
+#c4{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
+#c7{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
+#c10{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
+#c13{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;transition: all 200ms ease-in-out, background-color 200ms ease-in-out 160ms;}
+#c8{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;transition:  all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
+#c11{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
+#c14{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;transition: all 200ms ease-in-out, background-color 200ms ease-in-out 180ms;}
+#c12{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 200ms;transition: all 200ms ease-in-out, background-color 200ms ease-in-out 200ms;}
+#c15{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 200ms;transition: all 200ms ease-in-out, background-color 200ms ease-in-out 200ms;}
+#c16{-webkit-transition: all 200ms ease-in-out, background-color 200ms ease-in-out 220ms;transition: all 200ms ease-in-out, background-color 200ms ease-in-out 220ms;}
 
 /* ------------- */
 /* --- COLORS -- */
