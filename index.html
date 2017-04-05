@@ -10,63 +10,70 @@
   <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
-  <ul id="slide-out" class="side-nav">
-    <div class="container">
-      <li>
-        <h3>Options</h3>
-      </li>
-      <li>
-        <input class="with-gap" name="color-type-group" type="radio" id="hex" checked/>
-        <label for="hex">Hex</label>
-      </li>
-      <li>
-        <input class="with-gap" name="color-type-group" type="radio" id="rgb" />
-        <label for="rgb">RGB</label>
-      </li>
-      <li>
-        <input class="with-gap" name="color-type-group" type="radio" id="hsl" />
-        <label for="hsl">HSL</label>
-      </li>
-      <li>
-        <input class="with-gap" name="color-type-group" type="radio" id="hsv" />
-        <label for="hsv">HSV</label>
-      </li>
-      <li>
-        <div class="divider"></div>
-      </li>
-    </div>
-  </ul>
 
-  <div class="side-bar">
-    <a href="#" data-activates="slide-out" class=" button-collapse" data-delay="0" data-position="right" data-tooltip="Options"><i class="material-icons">menu</i></a>
+<body>
+  
+<ul id="slide-out" class="side-nav">
+  <div class="container">
+    <li>
+      <h3>Options</h3>
+    </li>
+    <li>
+      <input class="with-gap" name="color-type-group" type="radio" id="hex" checked/>
+      <label for="hex">Hex</label>
+    </li>
+    <li>
+      <input class="with-gap" name="color-type-group" type="radio" id="rgb" />
+      <label for="rgb">RGB</label>
+    </li>
+    <li>
+      <input class="with-gap" name="color-type-group" type="radio" id="hsl" />
+      <label for="hsl">HSL</label>
+    </li>
+    <li>
+      <input class="with-gap" name="color-type-group" type="radio" id="hsv" />
+      <label for="hsv">HSV</label>
+    </li>
+    <li>
+      <div class="divider"></div>
+    </li>
+    <a class="github-icon" href="https://github.com/penguoir/Google-Material-Colors"><img src="https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-24.png" alt="Github Logo"></a>
   </div>
-  <div class="x-container">
-	<div class="close"><a href="#"><i class="material-icons">arrow_back</i></a></div>
-  <div class="c-container">
-    <div id="c1" class="color-group 1 red-500">50</div>
-    <div id="c2" class="color-group 2 pink-500">100</div>
-    <div id="c3" class="color-group 3 purple-500">200</div>
-    <div id="c4" class="color-group 4 deep-purple-500">300</div>
-    <div id="c5" class="color-group 5 indigo-500">400</div>
-    <div id="c6" class="color-group 6 blue-500">500</div>
-    <div id="c7" class="color-group 7 light-blue-500">600</div>
-    <div id="c8" class="color-group 8 cyan-500">700</div>
-    <div id="c9" class="color-group 9 teal-500">800</div>
-    <div id="c10" class="color-group 10 green-500">900</div>
-    <div id="c11" class="color-group 11 light-green-500"></div>
-    <div id="c12" class="color-group 12 lime-500"></div>
-    <div id="c13" class="color-group 13 yellow-500">a-100</div>
-    <div id="c14" class="color-group 14 amber-500">a-200</div>
-    <div id="c15" class="color-group 15 orange-500">a-400</div>
-    <div id="c16" class="color-group 16 deep-orange-500">a-700</div>
+</ul>
+
+<a class="menu-button button-collapse" id="menu-button" href="#" data-activates="slide-out" data-delay="0" data-position="right" data-tooltip="Options"><i class="material-icons">menu</i></a>
+
+<div class="tap-target blue" data-activates="menu-button">
+  <div class="tap-target-content white-text">
+    <h5>Settings</h5>
+    <p>You can click here to change the format of color that is copied: RGB, HSL, etc.</p>
   </div>
 </div>
-	<div class="info-box info">
-		<a href="https://github.com/penguoir/Google-Material-Colors"><i class="fa fa-github fa-2x"></i></a>
-	</div>
 
+<div class="close"><a href="#"><i class="material-icons">arrow_back</i></a></div>
+  <!-- Color Boxes -->
+<div class="x-container">
+  <div class="c-container">
+    <div id="c1" class="color-box 1 red-500">50</div>
+    <div id="c2" class="color-box 2 pink-500">100</div>
+    <div id="c3" class="color-box 3 purple-500">200</div>
+    <div id="c4" class="color-box 4 deep-purple-500">300</div>
+    <div id="c5" class="color-box 5 indigo-500">400</div>
+    <div id="c6" class="color-box 6 blue-500">500</div>
+    <div id="c7" class="color-box 7 light-blue-500">600</div>
+    <div id="c8" class="color-box 8 cyan-500">700</div>
+    <div id="c9" class="color-box 9 teal-500">800</div>
+    <div id="c10" class="color-box 10 green-500">900</div>
+    <div id="c11" class="color-box 11 light-green-500"></div>
+    <div id="c12" class="color-box 12 lime-500"></div>
+    <div id="c13" class="color-box 13 yellow-500">a-100</div>
+    <div id="c14" class="color-box 14 amber-500">a-200</div>
+    <div id="c15" class="color-box 15 orange-500">a-400</div>
+    <div id="c16" class="color-box 16 deep-orange-500">a-700</div>
+  </div>
+</div>
 
+<!-- Info -->
 <div class="container">
   <div class="card">
     <div class="row">
@@ -100,6 +107,8 @@
     </div>
   </div>
 </div>
+
+<!-- In order: Jquery, Clipboard.js, Materialze, TinyColor, Custom -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
