@@ -18,9 +18,20 @@ jQuery.fn.originalColors = function(color) {
   currentState = "none";
 
   $( '.color-box ').each(function( index ) {
-    $( this ).toggleClass( allColors[index] + '-500 ' + color + colorValues[index]);
-    $(this).css('color', 'transparent');
+    if (index == 10) {
+      $(this).removeClass();
+      $(this).addClass("color-box 11 light-green-500");
+    }
+    else if (index == 11) {
+      $(this).removeClass();
+      $(this).addClass("color-box 12 lime-500");
+    }
+    else {
+      $( this ).toggleClass( allColors[index] + '-500 ' + color + colorValues[index]);
+      $( this ).css('color', 'transparent');
+    }
   });
+
   $( '.close' ).hide( "fast" );
   $( '.6' ).removeClass("bordered");
 
@@ -37,12 +48,61 @@ jQuery.fn.changeColor = function(color) {
   if(currentState == "none"){
     currentState = color;
     $( '.color-box' ).each(function(index) {
-      $( this ).toggleClass( allColors[index] + '-500 ' + color + colorValues[index]);
-      $( this ).css('color', '#fff');
+      if(index == 10) {
+        $(this).removeClass();
+        $(this).addClass("color-box 11 " + $.fn.getAccent(color) + "-a-200");
+      }
+      else if(index == 11) {
+        $(this).removeClass();
+        $(this).addClass("color-box 12 " + $.fn.getAccent(color) + "-a-400");
+      }
+      else {
+        $( this ).toggleClass( allColors[index] + '-500 ' + color + colorValues[index]);
+        $( this ).css('color', '#fff');
+      }
     });
     $( '.close' ).show( "fast" );
     $( '.6' ).addClass( "bordered" );
   }
+};
+
+jQuery.fn.getAccent = function(color){
+  switch (color) {
+    case "deep-purple":
+      color = "deeppurple";
+      break;
+    case "light-blue":
+      color = "lightblue";
+      break;
+    case "light-green":
+      color = "lightgreen";
+      break;
+    case "deep-orange":
+      color = "deeporange";
+      break;
+
+  }
+  accents = {
+    "red" : "teal",
+    "pink" : "green",
+    "purple" : "light-green",
+    "deeppurple" : "lime",
+    "indigo" : "yellow",
+    "blue" : "amber",
+    "lightblue" : "orange",
+    "cyan" : "deep-orange",
+    "teal" : "red",
+    "green" : "pink",
+    "lightgreen" : "purple",
+    "lime" : "deep-purple",
+    "yellow" : "indigo",
+    "amber" : "blue",
+    "orange" : "light-blue",
+    "deeporange" : "cyan"
+  };
+  var code = "accents." + color;
+  console.log(code);
+  return eval(code);
 };
 
 $(".color-box").click(function() {
